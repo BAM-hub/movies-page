@@ -1,25 +1,26 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-export default authSlice = createReducer({
+const authSlice = createSlice({
   name: "auth",
   initialState: {
     userName: "",
     password: "",
-    isAuth: false,
+    isAuthenticated: false,
   },
   reducers: {
     login: (state, action) => {
       const { userName, password } = action.payload;
       state.userName = userName;
       state.password = password;
-      state.isAuth = true;
+      state.isAuthenticated = true;
     },
     logout: (state) => {
       state.userName = "";
       state.password = "";
-      state.isAuth = false;
+      state.isAuthenticated = false;
     },
   },
 });
-
-export const { login, logout } = authSlice.actions;
+// I dont think we need to export the actions
+// export const { login, logout } = authSlice.actions;
+export default authSlice.reducer;
