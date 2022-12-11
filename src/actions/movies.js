@@ -7,7 +7,7 @@ export const getMovies = () => async (dispatch) => {
     console.log(data);
     dispatch({
       type: "movie/getMovies",
-      payload: data,
+      payload: data.results,
     });
   } catch (err) {
     dispatch({
