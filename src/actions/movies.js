@@ -4,7 +4,6 @@ export const getMovies = () => async (dispatch) => {
   try {
     const res = await fetch(API_URL);
     const data = await res.json();
-    console.log(data);
     dispatch({
       type: "movie/getMovies",
       payload: data.results,

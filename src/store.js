@@ -18,15 +18,10 @@ const persistConfig = {
 const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
-  actionCreator: "persist/PERSIST",
+  actionCreator: "persist/REHYDRATE",
   effect: async (action, listenerApi) => {
-    console.log("PERSIST", action);
-    console.log(
-      action.payload.auth.isAuthenticated &&
-        (await listenerApi.getState().movie.movies.length) === 0
-    );
     if (
-      action.payload.auth.isAuthenticated &&
+      action.payload?.auth?.isAuthenticated &&
       (await listenerApi.getState().movie.movies.length) === 0
     )
       listenerApi.dispatch(getMovies());
