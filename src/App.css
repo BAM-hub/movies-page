@@ -2,8 +2,22 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
+  background-color: #2c394b;
 }
 #root {
-  background-color: #2c394b;
   min-height: 100vh;
+}
+
+.skiptranslate.goog-te-gadget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.goog-te-combo {
+  padding: 2px;
+  border: none;
+  background-color: #082032;
+  color: #fff;
 }
