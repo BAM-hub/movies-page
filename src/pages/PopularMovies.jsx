@@ -32,14 +32,13 @@ const PopularMovies = ({ movie: { movies } }) => {
           display='flex'
           justifyContent='center'
           key={movie.id}
-          onClick={() => translateTxt(movie.original_title)}
         >
           <Card sx={{ width: 500 }}>
             <CardActionArea>
               <CardMedia
                 component='img'
                 image={`https://image.tmdb.org/t/p/original/${movie.poster_path}?api_key=${API_KEY}}`}
-                alt='green iguana'
+                alt={movie.original_title}
                 loading='lazy'
                 sx={{
                   objectFit: "cover",
